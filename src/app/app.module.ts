@@ -15,6 +15,8 @@ import { ItemsProvider } from '../providers/items/items';
 import { CartPage } from "../pages/cart/cart";
 import { LoginPage } from "../pages/login/login";
 import { SignUpPage } from "../pages/sign-up-page/sign-up-page";
+import { DatabaseAccessProvider } from '../providers/database-access/database-access';
+import { SQLiteObject, SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -47,8 +49,10 @@ import { SignUpPage } from "../pages/sign-up-page/sign-up-page";
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ItemsProvider
+    ItemsProvider,
+    DatabaseAccessProvider
   ]
 })
 export class AppModule {}

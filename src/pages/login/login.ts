@@ -37,6 +37,7 @@ export class LoginPage {
   }
 
   onLoginClicked() {
+    this.navCtrl.setRoot(TabsPage);
 }
 
 }
