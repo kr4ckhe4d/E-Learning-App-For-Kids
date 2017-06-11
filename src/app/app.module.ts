@@ -13,6 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItemsProvider } from '../providers/items/items';
 import { CartPage } from "../pages/cart/cart";
+import { LoginPage } from "../pages/login/login";
+import { SignUpPage } from "../pages/sign-up-page/sign-up-page";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { CartPage } from "../pages/cart/cart";
     HomePage,
     ItemPage,
     CartPage,
+    SignUpPage,
+    LoginPage,
     TabsPage
   ],
   imports: [
@@ -36,6 +40,8 @@ import { CartPage } from "../pages/cart/cart";
     HomePage,
     ItemPage,
     CartPage,
+    LoginPage,
+    SignUpPage,
     TabsPage
   ],
   providers: [

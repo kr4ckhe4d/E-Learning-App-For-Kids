@@ -20,7 +20,6 @@ product:any;
 
   addToCart(product) {
   	this.itemsProvider.addToCart(product,((val) =>{
-      // console.log(JSON.stringify(val));
       if(val.status == 'fail'){
         this.presentAlert("Already Added", "The item is already in the cart.", "Okay");
       }else if(val.status == 'success'){
@@ -36,5 +35,5 @@ product:any;
     buttons: [buttonType]
   });
   alert.present();
-}
+  }
 }
