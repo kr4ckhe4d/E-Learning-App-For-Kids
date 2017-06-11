@@ -14,6 +14,8 @@
 
 
 <ion-content padding>
+
+    {{cart | json}}
     <ion-card>
         <ion-card-header>
             Items
@@ -33,16 +35,16 @@
                 </div>
                 <div>
                     <button primary large>
-		  <ion-icon name="add" (click)="increaseQuantity(i)"></ion-icon>
+		  <ion-icon name="add" (click)="increaseQuantity(product)"></ion-icon>
 		</button>
                     <button primary large>
-		<ion-icon name="remove" (click)="decreaseQuantity(i)"></ion-icon>
+		<ion-icon name="remove" (click)="decreaseQuantity(product)"></ion-icon>
 		</button>
                 </div>
             </ion-item>
         </ion-list>
         <ion-card-content *ngIf="cart.length > 0">
-            <div>Total for this order is $ {{cart.total}}</div>
+            <div>Total for this order is $ {{cartTotal}}</div>
         </ion-card-content>
 
 

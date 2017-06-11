@@ -29,6 +29,8 @@
     </ion-list>
 
     <ion-fab right bottom>
+        <ion-badge color="secondary">{{ cart.length }}</ion-badge>
+
         <button ion-fab color="primary" (click)="viewCart()"><ion-icon name="cart"></ion-icon></button>
     </ion-fab>
 </ion-content>

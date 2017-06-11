@@ -16,13 +16,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class CartPage {
 
   cart = [];
+  cartTotal = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public itemsProvider: ItemsProvider) {
-    this.cart = itemsProvider.getCart();
+    this.getCartData();
+    this.getCartTotal();
+  }
+
+  getCartTotal(){
+    this.cartTotal = this.itemsProvider.getCartTotal();
+  }
+
+  getCartData(){
+    this.cart = this.itemsProvider.getCart();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
   }
 
+  increaseQuantity(product){
+    this.itemsProvider.increaseQuantity(product.id);
+    this.getCartData();
+    this.getCartTotal();
+  }
+
+  decreaseQuantity(product){
+    this.itemsProvider.decreaseQuantity(product.id);
+    this.getCartData();
+    this.getCartTotal();
+  }
 }

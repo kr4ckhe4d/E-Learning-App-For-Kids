@@ -17,9 +17,11 @@ import { CartPage } from "../cart/cart";
 })
 export class ItemsPage {
   products = [];
+  cart = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public itemsProvider:ItemsProvider) {
     this.products = itemsProvider.getItems();
+    this.cart = itemsProvider.getCart();
   }
 
   ionViewDidLoad() {

@@ -11,33 +11,33 @@ export class ItemsProvider {
       'price': '500',
       'id': '01'
   },{
-      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
+      'src':'https://www.o2.co.uk/shop/homepage/images/shop15/brand/apple/iphone-5s/iphone5s-gallery-img-2.jpg',
       'description': 'Patta phone eka',
       'name': 'iPhone 5S',
       'price_discount': '55.0',
       'price': '500',
       'id': '02'
   },{
-      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
+      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/rosegold/iphone6s-rosegold-select-2015_AV2?wid=150&hei=305&fmt=png-alpha&qlt=95&.v=1466197977882',
       'description': 'Patta phone eka',
       'name': 'iPhone 6S',
       'price_discount': '55.0',
       'price': '500',
-      'id': '02'
+      'id': '03'
   },{
-      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
+      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/jetblack/iphone7-jetblack-select-2016?wid=300&hei=300&fmt=png-alpha&qlt=95&.v=1472430076339',
       'description': 'Patta phone eka',
       'name': 'iPhone 7S',
       'price_discount': '55.0',
       'price': '500',
-      'id': '02'
+      'id': '04'
   },{
-      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
+      'src':'https://boygeniusreport.files.wordpress.com/2016/11/iphone-8-concept.jpg?quality=98&strip=all',
       'description': 'Patta phone eka',
       'name': 'iPhone 8S',
       'price_discount': '55.0',
       'price': '500',
-      'id': '02'
+      'id': '05'
   }];
 
   cart = [];
@@ -51,7 +51,38 @@ export class ItemsProvider {
   }
 
   addToCart(item){
+    item.quantity = '1';
     this.cart.push(item);
+  }
+
+  getCartTotal(){
+    var total = 0;
+    for(var i=0; i <this.cart.length; i++){
+      total = total + (parseInt(this.cart[i].quantity) * parseInt(this.cart[i].price)) - (parseInt(this.cart[i].quantity) * parseInt(this.cart[i].price_discount));
+    }
+    return total;
+  }
+
+  increaseQuantity(id){
+    for(var i=0; i <this.cart.length; i++){
+      if(this.cart[i].id == id){
+        var qty = parseInt(this.cart[i].quantity);
+        qty ++;
+        this.cart[i].quantity = ''+qty;
+        return;
+      }
+    }
+  }
+
+  decreaseQuantity(id){
+    for(var i=0; i <this.cart.length; i++){
+      if(this.cart[i].id == id){
+        var qty = parseInt(this.cart[i].quantity);
+        qty --;
+        this.cart[i].quantity = ''+qty;
+        return;
+      }
+    }
   }
 
   clearCart(){
