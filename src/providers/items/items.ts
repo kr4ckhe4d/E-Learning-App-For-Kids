@@ -50,9 +50,36 @@ export class ItemsProvider {
     return this.cart;
   }
 
-  addToCart(item){
-    item.quantity = '1';
-    this.cart.push(item);
+  addToCart(item,callback){
+    console.log(this.cart);
+    console.log(item);
+
+    if(this.cart.length == 0){
+      item.quantity = '1'; 
+      this.cart.push(item);
+      console.log('in len=0');
+      callback({'status': 'success'});
+      return;
+
+    }else if(this.cart.length > 0){
+
+      for(var i=0; i <this.cart.length; i++){
+        console.log('bool' + (parseInt(this.cart[i].id) == parseInt(item.id)));
+        if(parseInt(this.cart[i].id) == parseInt(item.id)){
+          console.log('in id=id');
+          callback({'status': 'fail'});
+          return;
+        }
+      }
+      item.quantity = '1';
+      this.cart.push(item);
+      console.log('in else');
+      callback({'status': 'success'});
+    }
+
+
+
+
   }
 
   getCartTotal(){
