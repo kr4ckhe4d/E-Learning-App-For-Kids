@@ -2,6 +2,7 @@ import { ItemsProvider } from '../../providers/items/items';
 import { ItemPage } from '../item/item';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CartPage } from "../cart/cart";
 
 /**
  * Generated class for the ItemsPage page.
@@ -29,6 +30,10 @@ export class ItemsPage {
       	this.navCtrl.push(ItemPage,{
   		product : product
   	})
+  }
+
+  viewCart(){
+    this.navCtrl.push(CartPage);
   }
 
 }

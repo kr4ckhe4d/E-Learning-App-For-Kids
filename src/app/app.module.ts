@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItemsProvider } from '../providers/items/items';
+import { CartPage } from "../pages/cart/cart";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ItemsProvider } from '../providers/items/items';
     ContactPage,
     HomePage,
     ItemPage,
+    CartPage,
     TabsPage
   ],
   imports: [
@@ -33,6 +35,7 @@ import { ItemsProvider } from '../providers/items/items';
     ContactPage,
     HomePage,
     ItemPage,
+    CartPage,
     TabsPage
   ],
   providers: [

@@ -13,20 +13,34 @@ export class ItemsProvider {
   },{
       'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
       'description': 'Patta phone eka',
-      'name': 'iPhone 4S',
+      'name': 'iPhone 5S',
+      'price_discount': '55.0',
+      'price': '500',
+      'id': '02'
+  },{
+      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
+      'description': 'Patta phone eka',
+      'name': 'iPhone 6S',
+      'price_discount': '55.0',
+      'price': '500',
+      'id': '02'
+  },{
+      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
+      'description': 'Patta phone eka',
+      'name': 'iPhone 7S',
+      'price_discount': '55.0',
+      'price': '500',
+      'id': '02'
+  },{
+      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
+      'description': 'Patta phone eka',
+      'name': 'iPhone 8S',
       'price_discount': '55.0',
       'price': '500',
       'id': '02'
   }];
 
-  cart = [{
-      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/plus/iphone7-plus-black-select-2016?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1472430090682',
-      'description': 'Patta phone eka',
-      'name': 'iPhone 4S',
-      'price_discount': '55.0',
-      'price': '500',
-      'id': '02'
-  }];
+  cart = [];
 
   getItems(){
     return this.products;

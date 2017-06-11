@@ -19,6 +19,6 @@ product:any;
   }
 
   addToCart(product) {
-  	console.log(this.itemsProvider.getCart());
+  	this.itemsProvider.addToCart(product);
   }
 }
