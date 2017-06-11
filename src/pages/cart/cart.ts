@@ -1,6 +1,6 @@
 import { ItemsProvider } from '../../providers/items/items';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the CartPage page.
@@ -18,7 +18,7 @@ export class CartPage {
   cart = [];
   cartTotal = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public itemsProvider: ItemsProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemsProvider: ItemsProvider, public alertCtrl: AlertController) {
     this.getCartData();
     this.getCartTotal();
   }
@@ -42,8 +42,36 @@ export class CartPage {
   }
 
   decreaseQuantity(product){
-    this.itemsProvider.decreaseQuantity(product.id);
-    this.getCartData();
-    this.getCartTotal();
+    if(product.quantity == 1){
+      this.showConfirm(product);
+    }else{
+      this.itemsProvider.decreaseQuantity(product.id);
+      this.getCartData();
+      this.getCartTotal();
+    }
+  }
+
+    showConfirm(product) {
+    let confirm = this.alertCtrl.create({
+      title: 'Remove item from cart?',
+      message: 'Do you want to remove this item from cart?',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Proceed',
+          handler: () => {
+            this.itemsProvider.removeFromCart(product.id);
+            this.getCartData();
+            this.getCartTotal();
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 }

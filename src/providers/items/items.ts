@@ -85,6 +85,15 @@ export class ItemsProvider {
     }
   }
 
+  removeFromCart(id){
+    for(var i=0; i <this.cart.length; i++){
+      if(this.cart[i].id == id){
+        this.cart.splice(i,1);
+        return;
+      }
+    }
+  }
+
   clearCart(){
     this.cart = [];
   }
