@@ -20,8 +20,8 @@ export class DatabaseAccessProvider {
     name: 'data.db',
     location: 'default'
     }).then((db: SQLiteObject) => {
-        db.executeSql('CREATE TABLE IF NOT EXISTS person(name VARCHAR(32),age INTEGER, address VARCHAR(250), telephone INTEGER)', {})
-          .then(() => console.log('Created Students Table'))
+        db.executeSql('CREATE TABLE IF NOT EXISTS person(email TEXT, fullname TEXT, country TEXT, state TEXT,city TEXT,pcode TEXT, address TEXT)', {})
+          .then(() => console.log('Created person Table'))
           .catch(e => console.log(e));
         }).catch(e => console.log(e));
   }
