@@ -1,0 +1,32 @@
+<!--
+  Generated template for the ItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>ItemPage</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <img src="{{product.src}}" />
+        <ion-card-content>
+            <ion-card-title>
+                {{product.name}}
+            </ion-card-title>
+            <div [ngSwitch]="product?.price_discount">
+                <p *ngSwitchCase="true">€ <span st>{{product.price}}</span> <span>{{product.price_discount}}</span></p>
+                <p *ngSwitchDefault>€ <span style="text-decoration: line-through;">{{product.price}}</span> <span>{{product.price_discount}}</span></p>
+            </div>
+            <div>
+                <button ion-button full (click)="addToCart(product)">Add to cart</button>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
