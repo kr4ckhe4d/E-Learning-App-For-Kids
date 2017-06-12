@@ -1,6 +1,8 @@
 import { ItemsProvider } from '../../providers/items/items';
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
+import { SecondaryCoursePage } from "../secondary-course/secondary-course";
+import { PrimaryCoursePage } from "../primary-course/primary-course";
 
 @IonicPage()
 @Component({
@@ -16,6 +18,21 @@ product:any;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ItemPage');
+  }
+
+  takeCourse(product){
+    this.itemsProvider.cart.push(product);
+    if(product.category == 'secondary'){
+    this.navCtrl.push(SecondaryCoursePage,{
+  		product : product
+  	})
+    }
+    if(product.category == 'primary'){
+    this.navCtrl.push(PrimaryCoursePage,{
+  		product : product
+  	})
+    }
+
   }
 
   addToCart(product) {

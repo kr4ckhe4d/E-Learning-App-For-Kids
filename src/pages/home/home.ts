@@ -1,3 +1,4 @@
+import { ItemsProvider } from '../../providers/items/items';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -6,9 +7,12 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
+  products = [];
+  constructor(public navCtrl: NavController, public itemsProvider: ItemsProvider) {
+    this.getCartData();
   }
 
+  getCartData(){
+    this.products = this.itemsProvider.getCart();
+  }
 }

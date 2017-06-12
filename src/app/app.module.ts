@@ -17,6 +17,8 @@ import { SignUpPage } from "../pages/sign-up-page/sign-up-page";
 import { DatabaseAccessProvider } from '../providers/database-access/database-access';
 import { SQLiteObject, SQLite } from '@ionic-native/sqlite';
 import { Courses1Page } from "../pages/courses1/courses1";
+import { SecondaryCoursePage } from "../pages/secondary-course/secondary-course";
+import { PrimaryCoursePage } from "../pages/primary-course/primary-course";
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { Courses1Page } from "../pages/courses1/courses1";
     CartPage,
     SignUpPage,
     LoginPage,
+    SecondaryCoursePage,
+    PrimaryCoursePage,
     TabsPage
   ],
   imports: [
@@ -45,6 +49,8 @@ import { Courses1Page } from "../pages/courses1/courses1";
     CartPage,
     LoginPage,
     SignUpPage,
+    SecondaryCoursePage,
+    PrimaryCoursePage,
     TabsPage
   ],
   providers: [
