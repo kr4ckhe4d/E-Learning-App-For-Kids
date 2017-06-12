@@ -20,12 +20,10 @@
             <ion-card-title>
                 {{product.name}}
             </ion-card-title>
-            <div [ngSwitch]="product?.price_discount">
-                <p *ngSwitchCase="true">€ <span st>{{product.price}}</span> <span>{{product.price_discount}}</span></p>
-                <p *ngSwitchDefault>€ <span style="text-decoration: line-through;">{{product.price}}</span> <span>{{product.price_discount}}</span></p>
-            </div>
+            <p>{{product.description}}</p>
+            <p>Difficulty Level : <span>{{product.difficulty}}</span></p>
             <div>
-                <button ion-button full (click)="addToCart(product)">Add to cart</button>
+                <button ion-button full (click)="takeCourse(product)">Take this Course</button>
             </div>
         </ion-card-content>
     </ion-card>

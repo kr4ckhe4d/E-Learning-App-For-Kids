@@ -1,5 +1,4 @@
 import { ItemPage } from '../pages/item/item';
-import { ItemsPage } from '../pages/items/items';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -17,11 +16,13 @@ import { LoginPage } from "../pages/login/login";
 import { SignUpPage } from "../pages/sign-up-page/sign-up-page";
 import { DatabaseAccessProvider } from '../providers/database-access/database-access';
 import { SQLiteObject, SQLite } from '@ionic-native/sqlite';
+import { Courses1Page } from "../pages/courses1/courses1";
+
 
 @NgModule({
   declarations: [
     MyApp,
-    ItemsPage,
+    Courses1Page,
     ContactPage,
     HomePage,
     ItemPage,
@@ -37,7 +38,7 @@ import { SQLiteObject, SQLite } from '@ionic-native/sqlite';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ItemsPage,
+    Courses1Page,
     ContactPage,
     HomePage,
     ItemPage,

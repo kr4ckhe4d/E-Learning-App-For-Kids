@@ -1,43 +1,37 @@
+import { DatabaseAccessProvider } from '../database-access/database-access';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ItemsProvider {
     products = [{
-      'src':'https://support.apple.com/content/dam/edam/applecare/images/en_US/iphone/featured-content-iphone-transfer-content-ios10_2x.png',
-      'description': 'Patta phone eka',
-      'name': 'iPhone 4S',
-      'price_discount': '55.0',
-      'price': '500',
+      'src':'https://thumbs.dreamstime.com/z/letter-abc-17681931.jpg',
+      'description': 'A simple activity to learn the Alphabet',
+      'name': 'Alphabet Time!',
+      'difficulty': 'easy',
+      'category': 'primary',
       'id': '01'
   },{
-      'src':'https://www.o2.co.uk/shop/homepage/images/shop15/brand/apple/iphone-5s/iphone5s-gallery-img-2.jpg',
-      'description': 'Patta phone eka',
-      'name': 'iPhone 5S',
-      'price_discount': '55.0',
-      'price': '500',
+      'src':'http://images.clipartpanda.com/red-apple-clipart-9iRa6xnie.png',
+      'description': 'A simple activity to learn figures',
+      'name': 'Read it Out!',
+      'difficulty': 'medium',
+      'category': 'primary',
       'id': '02'
   },{
-      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/rosegold/iphone6s-rosegold-select-2015_AV2?wid=150&hei=305&fmt=png-alpha&qlt=95&.v=1466197977882',
-      'description': 'Patta phone eka',
-      'name': 'iPhone 6S',
-      'price_discount': '55.0',
-      'price': '500',
+      'src':'http://static.kidspot.com.au/cm_assets/16544/addition-jpg-20150902151254.jpg~q75,dx720y432u1r1gg,c--.jpg',
+      'description': 'A simple activity to learn addition',
+      'name': 'Add It Up!',
+      'difficulty': 'medium',
+      'category': 'secondary',
       'id': '03'
   },{
-      'src':'https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/jetblack/iphone7-jetblack-select-2016?wid=300&hei=300&fmt=png-alpha&qlt=95&.v=1472430076339',
-      'description': 'Patta phone eka',
-      'name': 'iPhone 7S',
-      'price_discount': '55.0',
-      'price': '500',
+      'src':'http://mathskillbuilder.org/Img/mul.png',
+      'description': 'A simple activity to learn multiplication',
+      'name': 'Multiply!',
+      'difficulty': 'high',
+      'category': 'secondary',
       'id': '04'
-  },{
-      'src':'https://boygeniusreport.files.wordpress.com/2016/11/iphone-8-concept.jpg?quality=98&strip=all',
-      'description': 'Patta phone eka',
-      'name': 'iPhone 8S',
-      'price_discount': '55.0',
-      'price': '500',
-      'id': '05'
   }];
 
   cart = [];
@@ -48,6 +42,16 @@ export class ItemsProvider {
 
   getCart(){
     return this.cart;
+  }
+
+  getCourses(){
+    // var courses = this.products;
+    // for(var i=0;i<courses.length;i++){
+    //   if(courses[i].category !== this.dbAccess.currentUser.category){
+    //     courses.splice(i,1);
+    //   }
+    // }
+    return this.products;
   }
 
   addToCart(item,callback){
@@ -118,7 +122,7 @@ export class ItemsProvider {
     this.cart = [];
   }
 
-  constructor() {
+  constructor(public dbAccess: DatabaseAccessProvider) {
     console.log('Hello ItemsProvider Provider');
   }
 
