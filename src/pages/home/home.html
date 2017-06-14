@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content padding>
+    <div *ngIf="products.length == 0">
+        No items to display.
+    </div>
     <ion-list>
         <ion-item *ngFor="let product of products" (click)="viewItemDetails(product)">
             <ion-avatar item-left>

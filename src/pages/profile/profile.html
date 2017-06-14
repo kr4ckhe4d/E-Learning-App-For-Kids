@@ -6,13 +6,40 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Profile</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Profile</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content text-center>
+    <div class="user_cover_div">
+        <img src="assets/img/bg_purple.jpg">
+    </div>
+    <img src="http://img.clipartall.com/child-clipart-panda-free-clipart-images-child-clip-art-2400_2400.png" class="user_logo">
+    <div class="below_pic" text-center>
+        <h1>Firstname Secondname</h1>
+        <button ion-button (click)="editProfileClicked" class="btn_follow">EDIT PROFILE</button>
+    </div>
+    <hr>
+    <h1>
+        <p>My Courses</p>
+    </h1>
+    <div>
+        <ion-list no-lines scrollX="true">
+            <div *ngIf="products.length == 0">
+                No items to display.
+            </div>
+            <ion-item *ngFor="let product of products">
+                <ion-card text-center>
+                    <img src="{{product.src}}" class="product" />
+                    <ion-card-content>
+                        <ion-card-title>{{product.name}}</ion-card-title>
+                        <p text-wrap>{{product.points}}</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-item>
+        </ion-list>
+    </div>
 </ion-content>

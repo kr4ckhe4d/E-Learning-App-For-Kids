@@ -11,7 +11,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItemsProvider } from '../providers/items/items';
-import { CartPage } from "../pages/cart/cart";
 import { LoginPage } from "../pages/login/login";
 import { SignUpPage } from "../pages/sign-up-page/sign-up-page";
 import { DatabaseAccessProvider } from '../providers/database-access/database-access';
@@ -19,8 +18,9 @@ import { SQLiteObject, SQLite } from '@ionic-native/sqlite';
 import { Courses1Page } from "../pages/courses1/courses1";
 import { SecondaryCoursePage } from "../pages/secondary-course/secondary-course";
 import { PrimaryCoursePage } from "../pages/primary-course/primary-course";
+import { ProfilePage } from "../pages/profile/profile";
 
-
+ProfilePage
 @NgModule({
   declarations: [
     MyApp,
@@ -28,11 +28,11 @@ import { PrimaryCoursePage } from "../pages/primary-course/primary-course";
     ContactPage,
     HomePage,
     ItemPage,
-    CartPage,
     SignUpPage,
     LoginPage,
     SecondaryCoursePage,
     PrimaryCoursePage,
+    ProfilePage,
     TabsPage
   ],
   imports: [
@@ -46,11 +46,11 @@ import { PrimaryCoursePage } from "../pages/primary-course/primary-course";
     ContactPage,
     HomePage,
     ItemPage,
-    CartPage,
     LoginPage,
     SignUpPage,
     SecondaryCoursePage,
     PrimaryCoursePage,
+    ProfilePage,
     TabsPage
   ],
   providers: [

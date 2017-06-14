@@ -1,3 +1,4 @@
+import { ItemsProvider } from '../../providers/items/items';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -13,12 +14,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  products = [];
+  constructor(public navCtrl: NavController, public itemsProvider: ItemsProvider) {
+    this.getCartData();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+  getCartData(){
+    this.products = this.itemsProvider.getCart();
   }
 
 }

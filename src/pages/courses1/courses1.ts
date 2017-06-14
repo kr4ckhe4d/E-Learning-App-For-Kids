@@ -1,5 +1,4 @@
 import { DatabaseAccessProvider } from '../../providers/database-access/database-access';
-import { CartPage } from '../cart/cart';
 import { ItemPage } from '../item/item';
 import { ItemsProvider } from '../../providers/items/items';
 import { Component } from '@angular/core';
@@ -36,8 +35,8 @@ products = [];
   	})
   }
 
-  viewCart(){
-    this.navCtrl.push(CartPage);
-  }
+  // viewCart(){
+  //   this.navCtrl.push(CartPage);
+  // }
 
 }

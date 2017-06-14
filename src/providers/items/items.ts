@@ -5,19 +5,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ItemsProvider {
     products = [{
-      'src':'https://thumbs.dreamstime.com/z/letter-abc-17681931.jpg',
-      'description': 'A simple activity to learn the Alphabet',
-      'name': 'Alphabet Time!',
-      'difficulty': 'easy',
-      'category': 'primary',
-      'id': '01'
-  },{
       'src':'http://images.clipartpanda.com/red-apple-clipart-9iRa6xnie.png',
       'description': 'A simple activity to learn figures',
       'name': 'Read it Out!',
       'difficulty': 'medium',
       'category': 'primary',
-      'id': '02',
+      'id': '01',
       'points': '',
       'sign' : 'x',
       'problems':[
@@ -49,7 +42,7 @@ export class ItemsProvider {
       'name': 'Add It Up!',
       'difficulty': 'medium',
       'category': 'secondary',
-      'id': '03',
+      'id': '02',
       'points': '',
       'sign' : '+',
       'problems':[
@@ -105,7 +98,7 @@ export class ItemsProvider {
       'name': 'Multiply!',
       'difficulty': 'high',
       'category': 'secondary',
-      'id': '04',
+      'id': '03',
       'points': '',
       'sign' : 'x',
       'problems':[
@@ -212,36 +205,36 @@ export class ItemsProvider {
     return total;
   }
 
-  increaseQuantity(id){
-    for(var i=0; i <this.cart.length; i++){
-      if(this.cart[i].id == id){
-        var qty = parseInt(this.cart[i].quantity);
-        qty ++;
-        this.cart[i].quantity = ''+qty;
-        return;
-      }
-    }
-  }
+  // increaseQuantity(id){
+  //   for(var i=0; i <this.cart.length; i++){
+  //     if(this.cart[i].id == id){
+  //       var qty = parseInt(this.cart[i].quantity);
+  //       qty ++;
+  //       this.cart[i].quantity = ''+qty;
+  //       return;
+  //     }
+  //   }
+  // }
 
-  decreaseQuantity(id){
-    for(var i=0; i <this.cart.length; i++){
-      if(this.cart[i].id == id){
-        var qty = parseInt(this.cart[i].quantity);
-        qty --;
-        this.cart[i].quantity = ''+qty;
-        return;
-      }
-    }
-  }
+  // decreaseQuantity(id){
+  //   for(var i=0; i <this.cart.length; i++){
+  //     if(this.cart[i].id == id){
+  //       var qty = parseInt(this.cart[i].quantity);
+  //       qty --;
+  //       this.cart[i].quantity = ''+qty;
+  //       return;
+  //     }
+  //   }
+  // }
 
-  removeFromCart(id){
-    for(var i=0; i <this.cart.length; i++){
-      if(this.cart[i].id == id){
-        this.cart.splice(i,1);
-        return;
-      }
-    }
-  }
+  // removeFromCart(id){
+  //   for(var i=0; i <this.cart.length; i++){
+  //     if(this.cart[i].id == id){
+  //       this.cart.splice(i,1);
+  //       return;
+  //     }
+  //   }
+  // }
 
   clearCart(){
     this.cart = [];
